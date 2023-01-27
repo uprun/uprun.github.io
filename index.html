@@ -16,6 +16,16 @@
     }
 </style>
 <style>
+    .mypage-discord{
+        background:#404eed;
+        color:#fff;
+        border-radius: 3rem;
+        padding: 0.5rem;
+        border: 0.2rem solid #404eed;
+        display: inline-block;
+    }
+</style>
+<style>
     .prevent-select {
         -webkit-user-select: none; /* Safari */
         -ms-user-select: none; /* IE 10 and IE 11 */
@@ -62,6 +72,16 @@
     a.print
     {
         color: blue;
+    }
+</style>
+<style>
+    .mypage-discord > a
+    {
+        color: inherit;
+    } 
+    .lisperanto-patreon > a
+    {
+        color: inherit;
     }
 </style>
 <script>
@@ -160,10 +180,10 @@
     onload="my_page.on_load()">
     <div
         class="prevent-select"
-        style="position: absolute;
-        left: 1rem;
-        top: 1rem;
-        max-width: 100%;">
+        style="
+        max-width: 100%;
+        padding:1rem;
+        ">
         <span class="prevent-select"
             style="
             border-style: solid;
@@ -172,7 +192,7 @@
             border-color: orange;
             padding: 0.2rem;
             cursor: pointer;"
-         onclick="my_page.swith_darkness(true)">Theme</span>
+         onclick="my_page.swith_darkness(true)">change colour theme</span>
          <span
             class="lisperanto-patreon">
             <a 
@@ -183,9 +203,13 @@
                 >
                 Support on Patreon
             </a></span>
+        <span
+            class="mypage-discord">
+            <a href="https://discord.gg/W5HFSKVXgc">Join Discord</a>
+        </span>
     </div>
     
-    <div style="margin: auto; max-width: 60rem; margin-top: 4rem;">
+    <div style="margin: auto; max-width: 60rem;">
         <h1>Oleksandr Kryvonos</h1>
         <h1><div>- a software engineer from Odesa, Ukraine &#127482;&#127462;</div>
             <div>with education in applied mathematics.</div></h1>
