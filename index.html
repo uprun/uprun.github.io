@@ -1,51 +1,241 @@
-<body >
-    <style >
-        body
-        {
-            background-color: #333; 
-            color: darkorange;
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oleksandr Kryvonos</title>
+</head>
+<style>
+    .lisperanto-patreon{
+        background:rgb(255, 66, 77);
+        color:#fff;
+        border-radius: 3rem;
+        padding: 0.5rem;
+        border: 0.2rem solid rgb(255, 66, 77);
+        display: inline-block;
+    }
+</style>
+<style>
+    .prevent-select {
+        -webkit-user-select: none; /* Safari */
+        -ms-user-select: none; /* IE 10 and IE 11 */
+        user-select: none; /* Standard syntax */
+    }
+</style>
+<style>
+    p {
+        padding-left: 1rem;
+    }
+</style>
+<style>
+    body.transition
+    {
+        transition: color 0.8s ease-in-out;
+        transition: background-color 0.8s ease-in-out;
 
-        }
-        a 
-        {
-            color: lightblue
-        }
-    </style>
-    <h1>Oleksandr Kryvonos - a developer from Odesa, Ukraine</h1>
-    <p>my projects:</p>
-    <p><a href="https://webpad.com.ua">WebPad</a> - an app for non-hierarchical associative web of notes (hence the name, but also runs in the browser) </p>
-    <p><a href="https://uprun.github.io/lisperanto">Lisperanto</a> 
-        - in browser IDE for Lisp-like language 
-        <p>
-            <b>Features:</b>
-            <br>
-            <ul>
-                <li>
-                    Abstract Syntax Tree (AST) constructor
-                </li>
-                <li>
-                    in browser IDE
-                </li>
-                <li>
-                    interpretator
-                </li>
-                <li>
-                    built-in VCS (Version Control System) [will be availble soon]
+    }
+    a.transition
+    {
+        transition: color 0.8s ease-in-out;
+        transition: background-color 0.8s ease-in-out;
+    }
+</style>
+<style>
+    body.dark
+    {
+        background-color: #333; 
+        color: darkorange;
 
-                </li>
-            </ul>
+    }
+    a.dark
+    {
+        color: lightblue;
+    }
+</style>
+<style>
+    body.print
+    {
+        background-color: white; 
+        color: black;
+
+    }
+    a.print
+    {
+        color: blue;
+    }
+</style>
+<script>
+    my_page = {};
+</script>
+<script>
+    my_page.load_darkness_from_storage = function(dafault_value)
+    {
+        if(window.localStorage )
+        {
+            const darkness = window.localStorage.getItem("darkness");
+            if (typeof(darkness) === "undefined")
+            {
+                my_page.darkness = dafault_value;
+            }
+            else
+            {
+                my_page.darkness = JSON.parse(darkness);
+            }
             
+        }
+    };
+</script>
+<script>
+    my_page.turn_darkness_theme = function(darkness)
+    {
+        
+        if (darkness)
+        {
+            var print = Array.from(document.getElementsByClassName("print"));
+            for(var element of print)
+            {
+                element.classList.replace("print", "dark");
+            }
+        }
+        else
+        {
+            var dark = Array.from(document.getElementsByClassName("dark"));
+            for(var element of dark)
+            {
+                element.classList.replace("dark", "print");
+            }
+        }
+    };
+</script>
+<script>
+    my_page.delayed_transition = function()
+    {
+        var themed = Array.from(document.getElementsByClassName("themed"));
+        for(var element of themed)
+        {
+            element.classList.add("transition");
+        }
+    };
+</script>
+<script>
+    my_page.on_load = function()
+    {
+        var current_date = new Date();
+        const hours = current_date.getHours() + 1;
+        var is_it_dark = false;
+        if (hours < 8 || hours > 20)
+        {
+            is_it_dark = true;
+        }
+        my_page.load_darkness_from_storage(is_it_dark);
+        my_page.turn_darkness_theme(my_page.darkness);
+
+        setTimeout(my_page.delayed_transition, 1000);
+
+
+
+    };
+</script>
+<script>
+    my_page.set_darkness = function(should_it_be_dark)
+    {
+        my_page.darkness = should_it_be_dark;
+        if ( window.localStorage)
+        {
+            window.localStorage.setItem("darkness", JSON.stringify(should_it_be_dark))
+        }
+        my_page.turn_darkness_theme(my_page.darkness);
+    };
+
+</script>
+<script>
+    my_page.swith_darkness = function()
+    {
+        my_page.set_darkness(!my_page.darkness);
+    }
+</script>
+<body 
+    style="margin: 0px;"
+    class="dark themed"
+    onload="my_page.on_load()">
+    <div
+        class="prevent-select"
+        style="position: absolute;
+        left: 1rem;
+        top: 1rem;
+        max-width: 100%;">
+        <span class="prevent-select"
+            style="
+            border-style: solid;
+            border-width: 0.2rem;
+            border-radius: 0.2rem;
+            border-color: orange;
+            padding: 0.2rem;"
+         onclick="my_page.swith_darkness(true)">Theme</span>
+         <span
+            class="lisperanto-patreon">
+            <a 
+                href="https://www.patreon.com/o_kryvonos" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onclick="lisperanto.stopPropagation(event)"
+                >
+                Support on Patreon
+            </a></span>
+    </div>
+    
+    <div style="margin: auto; max-width: 60rem; margin-top: 4rem;">
+        <h1>Oleksandr Kryvonos - a software engineer from Odesa, Ukraine &#127482;&#127462;</h1>
+        <p>my projects [update from 2023-01-27]:</p>
+        <p><span><a class="dark themed"
+            href="https://uprun.github.io/canvas-typewriter/canvas-typewriter.html">canvas typewriter</a> -  type like on a typewriter but on draggable canvas.</span>
         </p>
-        <p>
-            <b>Inspired by:</b>
-            <ul>
-                <li>Lisp</li>
-                <li>Haxe</li>
-                <li>SmallTalk</li>
-                <li>talks by Chris Granger about Eve</li>
-                <li>talks by Bret Victor</li>
-                <li>talks by Alan Kay</li>
-            </ul>
+        <p><span><a class="dark themed"
+            href="https://webpad.com.ua">WebPad</a> -  a simple note taking app where every word is a hashtag by default.</span>
+            <p><i>Or in other words: an app for non-hierarchical associative web of notes (hence the name, but also runs in the browser)</i></p>
         </p>
-    </p>
+        <p><a class="dark themed" href="https://uprun.github.io/lisperanto">Lisperanto</a> 
+            a spatial canvas and text editor with history of edits.
+            <p><i>(yes - as simple as it could possibly be, but good idea takes time to evolve)</i></p>
+            <p>
+                <b>Inspired by:</b>
+                <ul>
+                    <li>Lisp</li>
+                    <li>Haxe</li>
+                    <li>SmallTalk</li>
+                    <li>talks by Chris Granger about Eve</li>
+                    <li>talks by Bret Victor</li>
+                    <li>talks by Alan Kay</li>
+                </ul>
+            </p>
+        </p>
+        <div style="padding-left: 1rem;">
+            <i>Previously known as:</i>
+            <div style="display: none;">
+                <a class="dark themed" href="https://uprun.github.io/lisperanto">Lisperanto</a>
+                - <s>in browser IDE for Lisp-like language</s> 
+                <p>
+                    <b>Features:</b>
+                    <br>
+                    <ul>
+                        <li>
+                            <s>Abstract Syntax Tree (AST) constructor</s>
+                        </li>
+                        <li>
+                            <s>in browser IDE</s>
+                        </li>
+                        <li>
+                            <s>interpretator</s>
+                        </li>
+                        <li>
+                            <s>built-in VCS (Version Control System) [will be availble soon]</s>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        
+    </div>
+    
 </body>
+</html>
