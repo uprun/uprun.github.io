@@ -73,7 +73,7 @@
         if(window.localStorage )
         {
             const darkness = window.localStorage.getItem("darkness");
-            if (typeof(darkness) === "undefined")
+            if (darkness == null || typeof(darkness) === "undefined")
             {
                 my_page.darkness = dafault_value;
             }
@@ -170,7 +170,8 @@
             border-width: 0.2rem;
             border-radius: 0.2rem;
             border-color: orange;
-            padding: 0.2rem;"
+            padding: 0.2rem;
+            cursor: pointer;"
          onclick="my_page.swith_darkness(true)">Theme</span>
          <span
             class="lisperanto-patreon">
@@ -197,8 +198,10 @@
             <p><i>Or in other words: an app for non-hierarchical associative web of notes (hence the name, but also runs in the browser)</i></p>
         </p>
         <p><a class="dark themed" href="https://uprun.github.io/lisperanto">Lisperanto</a> 
-            a spatial canvas and text editor with history of edits.
+            - a spatial canvas and text editor with history of edits.
             <p><i>(yes - as simple as it could possibly be, but good idea takes time to evolve)</i></p>
+            <p><i>Previously known as:</i>
+                <s>Lisperanto - in browser IDE for Lisp-like language</s> </p>
             <p>
                 <b>Inspired by:</b>
                 <ul>
@@ -211,32 +214,6 @@
                 </ul>
             </p>
         </p>
-        <div style="padding-left: 1rem;">
-            <i>Previously known as:</i>
-            <div style="display: none;">
-                <a class="dark themed" href="https://uprun.github.io/lisperanto">Lisperanto</a>
-                - <s>in browser IDE for Lisp-like language</s> 
-                <p>
-                    <b>Features:</b>
-                    <br>
-                    <ul>
-                        <li>
-                            <s>Abstract Syntax Tree (AST) constructor</s>
-                        </li>
-                        <li>
-                            <s>in browser IDE</s>
-                        </li>
-                        <li>
-                            <s>interpretator</s>
-                        </li>
-                        <li>
-                            <s>built-in VCS (Version Control System) [will be availble soon]</s>
-                        </li>
-                    </ul>
-                </p>
-            </div>
-        </div>
-        
     </div>
     
 </body>
