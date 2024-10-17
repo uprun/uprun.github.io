@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bare pixel</title>
+</head>
+
+<script>
+    function myFunction(ev)
+    {
+        console.log(event)
+        if (event.key === "ArrowDown") camV += 10;
+        if (event.key === "ArrowUp") camV -= 10;
+        if (event.key === "ArrowLeft") camH += 10;
+        if (event.key === "ArrowRight") camH -= 10;
+
+        if (camV > 90) camV = 90;
+        if (camV < 0) camV = 0;
+
+    }
+</script>
+
+  
+<body style="background-color: #333333;" onkeydown="myFunction()" >
+    <canvas id="myCanvas" width="640" height="480" style="border:1px solid black;"></canvas>
+
+    <script>
+        
+        canvas = document.getElementById("myCanvas");
+        ctx = canvas.getContext("2d");
+
+        x0 = 0 
+        y0 = 0
+        z0 = 0
+        x1 = 0
+        y1 = 0
+        z1 = 0
+        monX = 0
+        monY = 0
+        monX1 = 0
+        monY1 = 0
+        camH = 0
+        camV = 0
+
+        function round(a) 
+        {
+            return Math.round(a);
+        }
+        function cos(a)
+        {
+            return Math.cos(a);
+        }
+        function sin(a)
+        {
+            return Math.sin(a);
+        }
+
+        function VnV(x0,y0,z0,x1,y1,z1)
+        {
+            var H = camH*Math.PI/180;
+            var V = camV* Math.PI/180;
+            monX=round(y0*cos(H))-round(x0*sin(H));
+            monX1=round(y1*cos(H))-round(x1*sin(H));
+            monY=240-round(z0*cos(V))+round(sin(V)*((y0*sin(H))+round(x0*cos(H))));
+            monY1=240-round(z1*cos(V))+round(sin(V)*((y1*sin(H))+round(x1*cos(H))));
+            monX=monX+320;
+            monX1=monX1+320;
+
+        }
+
+        function L(x0,y0,z0,x1,y1,z1, color)
+        {
+            VnV(x0,y0,z0,x1,y1,z1);
+            draw_line(monX,monY,monX1,monY1, color);
+
+        }
+
+        function draw_line(x1, y1, x2, y2, color = "lightgreen" )
+        {
+            ctx.beginPath();
+            
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = color;
+
+            // Set a start-point
+            ctx.moveTo(x1, y1);
+            
+
+            // Set an end-point
+            ctx.lineTo(x2, y2);
+
+            // Stroke it (Do the Drawing)
+            ctx.stroke();
+        }
+
+        function body()
+        {
+            L(0,0,0,45,0,0, "red");
+            L(0,-45,0,0,45,0, "green");
+            L(0,0,-45,0,0,45, "yellow");
+        }
+
+        function clear_screen()
+        {
+            ctx.clearRect(0, 0, 640, 480);
+        }
+
+        function draw()
+        {
+            
+            clear_screen();
+            body();
+            //repeat
+            setTimeout(draw, 10);
+        }
+
+        setTimeout(draw, 10);
+    
+        
+        
+      </script>
+</body>
