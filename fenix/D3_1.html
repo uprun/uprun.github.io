@@ -3,10 +3,15 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>bare pixel</title>
+    <title>D3_1</title>
 </head>
 
 <script>
+    function check_camera_restrictions()
+    {
+        if (camV > 90) camV = 90;
+        if (camV < 0) camV = 0;
+    }
     function myFunction(ev)
     {
         console.log(event)
@@ -15,14 +20,51 @@
         if (event.key === "ArrowLeft") camH += 10;
         if (event.key === "ArrowRight") camH -= 10;
 
-        if (camV > 90) camV = 90;
-        if (camV < 0) camV = 0;
+        check_camera_restrictions();
 
+    }
+
+</script>
+
+<script>
+    mouse_is_down = false;
+    function my_onmousedown()
+    {
+        mouse_is_down = true;
+        console.log(event)
+    }
+    function my_onmousemove()
+    {
+        console.log(event)
+        if (mouse_is_down)
+        {
+            camH -= event.movementX / 10;
+            camV += event.movementY / 10;
+            check_camera_restrictions();
+        }
+        
+    }
+    function my_onmouse_leave()
+    {
+        mouse_is_down = false;
+    }
+    function my_on_mouse_out()
+    {
+        //mouse_is_down = false;
+    }
+    function my_on_mouse_up()
+    {
+        mouse_is_down = false;
     }
 </script>
 
   
-<body style="background-color: #333333;" onkeydown="myFunction()" >
+<body style="background-color: #333333; padding: 0; margin: 0; width: 100vw; height: 100vh;" onkeydown="myFunction()" 
+    onmousedown="my_onmousedown()"
+    onmousemove="my_onmousemove()"
+    onmouseleave="my_onmouse_leave()"
+    onmouseout="my_on_mouse_out()"
+    onmouseup="my_on_mouse_up()" >
     <canvas id="myCanvas" width="640" height="480" style="border:1px solid black;"></canvas>
 
     <script>
