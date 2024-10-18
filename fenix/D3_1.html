@@ -101,11 +101,15 @@
         function VnV(x0,y0,z0,x1,y1,z1)
         {
             var H = camH*Math.PI/180;
+            var c_h = cos(H)
+            var s_h = sin(H)
             var V = camV* Math.PI/180;
-            monX=round(y0*cos(H))-round(x0*sin(H));
-            monX1=round(y1*cos(H))-round(x1*sin(H));
-            monY=240-round(z0*cos(V))+round(sin(V)*((y0*sin(H))+round(x0*cos(H))));
-            monY1=240-round(z1*cos(V))+round(sin(V)*((y1*sin(H))+round(x1*cos(H))));
+            var s_v = sin(V)
+            var c_v = cos(V)
+            monX=round(y0*c_h - x0*s_h);
+            monX1=round(y1*c_h - x1*s_h);
+            monY=240- (z0*c_v) + ( s_v * ( y0*s_h + x0*c_h ) );
+            monY1=240- (z1*c_v)+ (s_v*( y1*s_h + x1*c_h));
             monX=monX+320;
             monX1=monX1+320;
 
@@ -139,6 +143,7 @@
         function body()
         {
             L(0,0,0,45,0,0, "red");
+            L(45, -45,0 , 45, 0, 0, "magenta")
             L(0,-45,0,0,45,0, "green");
             L(0,0,-45,0,0,45, "yellow");
         }
