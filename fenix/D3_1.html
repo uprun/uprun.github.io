@@ -11,6 +11,8 @@
     {
         if (camV > 90) camV = 90;
         if (camV < 0) camV = 0;
+
+        console.log("camH", camH, "camV", camV);
     }
     function myFunction(ev)
     {
@@ -31,11 +33,11 @@
     function my_onmousedown()
     {
         mouse_is_down = true;
-        console.log(event)
+        //console.log(event)
     }
     function my_onmousemove()
     {
-        console.log(event)
+        //console.log(event)
         if (mouse_is_down)
         {
             camH -= event.movementX / 10;
@@ -71,19 +73,18 @@
         
         canvas = document.getElementById("myCanvas");
         ctx = canvas.getContext("2d");
+        imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const canvasWidth = canvas.width;
+        const canvasHeight = canvas.height;
 
-        x0 = 0 
-        y0 = 0
-        z0 = 0
-        x1 = 0
-        y1 = 0
-        z1 = 0
-        monX = 0
-        monY = 0
-        monX1 = 0
-        monY1 = 0
+        var depth_buffer = {};
+
+        
+        
         camH = 0
         camV = 0
+
+        distance_to_camera0 = 0
 
         function round(a) 
         {
@@ -98,27 +99,114 @@
             return Math.sin(a);
         }
 
-        function VnV(x0,y0,z0,x1,y1,z1)
+        function transform_to_camera(p)
         {
-            var H = camH*Math.PI/180;
+            
+            var H = p.horizontal_degrees_of_camera * Math.PI/180;
             var c_h = cos(H)
             var s_h = sin(H)
-            var V = camV* Math.PI/180;
+            var V = p.vertical_degrees_of_camera * Math.PI/180;
             var s_v = sin(V)
             var c_v = cos(V)
-            monX=round(y0*c_h - x0*s_h);
-            monX1=round(y1*c_h - x1*s_h);
-            monY=240- (z0*c_v) + ( s_v * ( y0*s_h + x0*c_h ) );
-            monY1=240- (z1*c_v)+ (s_v*( y1*s_h + x1*c_h));
-            monX=monX+320;
-            monX1=monX1+320;
+            
+            var monX= round(p.y0*c_h - p.x0*s_h) ;
+            var distance_to_camera0 = p.z0 * s_v + c_v * (p.x0 * c_h + p.y0 * s_h)
+            var monY=   ( s_v * ( p.y0*s_h + p.x0*c_h ) ) - (p.z0*c_v);
+            //monY =  p.x0 * s_v * c_h - p.z0 * c_v + p.y0 * s_h * s_v
+            monY= round(monY)
+            
+            return {
+                monX: monX,
+                distance_to_camera0: distance_to_camera0,
+                monY: monY
+            }
+
+        }
+
+        var r = transform_to_camera({
+                    x0: 100,
+                    y0: 0,
+                    z0: 0, 
+                    horizontal_degrees_of_camera: 1, 
+                    vertical_degrees_of_camera: 0
+                    });
+        console.log(r)
+
+        var r = transform_to_camera({
+                    x0: 0,
+                    y0: 100,
+                    z0: 0, 
+                    horizontal_degrees_of_camera: 30, 
+                    vertical_degrees_of_camera: 0
+                    });
+        console.log(r)
+
+        var r = transform_to_camera({
+                    x0: 100,
+                    y0: 0,
+                    z0: 0, 
+                    horizontal_degrees_of_camera: 0, 
+                    vertical_degrees_of_camera: 1
+                    });
+        console.log(r)
+
+        var r = transform_to_camera({
+                    x0: 0,
+                    y0: 0,
+                    z0: 100, 
+                    horizontal_degrees_of_camera: 0, 
+                    vertical_degrees_of_camera: 30
+                    });
+        console.log(r)
+
+        function write_color(monX, monY, color)
+        {
+            const [redIndex, greenIndex, blueIndex, alphaIndex] = getColorIndicesForCoord(monX, monY, canvasWidth);
+            imageData.data[redIndex] = color.r;
+            imageData.data[greenIndex] = color.g;
+            imageData.data[blueIndex] = color.b;
+            imageData.data[alphaIndex] = color.a;
+        }
+
+        function draw_pixel(monX, monY, distance_to_camera0, color)
+        {
+            if (monX < 0 || monX > canvasWidth) return;
+            if (monY < 0 || monY > canvasWidth) return;
+            var key = `{x: ${monX}, y: ${monY}}`;
+            if (key in depth_buffer)
+            {
+                value = depth_buffer[key];
+                if(value < distance_to_camera0)
+                {
+                    write_color(monX, monY, color);
+                }
+            }
+            else
+            {
+                depth_buffer[key] = distance_to_camera0;
+                write_color(monX, monY, color);
+            }
 
         }
 
         function L(x0,y0,z0,x1,y1,z1, color)
         {
-            VnV(x0,y0,z0,x1,y1,z1);
-            draw_line(monX,monY,monX1,monY1, color);
+            var steps = 100;
+            
+            for(var k = 0; k <= steps; k++)
+            {
+                var dx = ((x1 - x0) * k / steps) + x0;
+                var dy = ((y1 - y0) * k / steps) + y0;
+                var dz = ((z1 - z0) * k / steps) + z0;
+                var r = transform_to_camera({
+                    x0: dx,
+                    y0: dy,
+                    z0: dz, 
+                    horizontal_degrees_of_camera: camH, 
+                    vertical_degrees_of_camera: camV
+                    });
+                draw_pixel(r.monX + 320, r.monY + 240, r.distance_to_camera0, color)
+            }
 
         }
 
@@ -140,12 +228,13 @@
             ctx.stroke();
         }
 
-        function body()
+        function draw_frame()
         {
-            L(0,0,0,45,0,0, "red");
-            L(45, -45,0 , 45, 0, 0, "magenta")
-            L(0,-45,0,0,45,0, "green");
-            L(0,0,-45,0,0,45, "yellow");
+            L(0,0,0,45,0,0, {"r": 255, "g": 0, "b": 0, "a": 255});
+            //L(45, -45,0 , 45, 0, 0, "magenta")
+            //console.log("distance_to_camera", distance_to_camera1)
+            L(0,-45,0,0,45,0, {"r": 0, "g": 255, "b": 0, "a": 255});
+            L(0,0,-45,0,0,45, {"r": 0, "g": 0, "b": 255, "a": 255});
         }
 
         function clear_screen()
@@ -153,11 +242,27 @@
             ctx.clearRect(0, 0, 640, 480);
         }
 
+        const getColorIndicesForCoord = (x, y, width) => {
+            const red = y * (width * 4) + x * 4;
+            return [red, red + 1, red + 2, red + 3];
+        };
+
         function draw()
         {
             
             clear_screen();
-            body();
+
+            depth_buffer = {};
+            
+            imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            draw_frame();
+//   const data = imageData.data;
+//   for (let i = 0; i < data.length; i += 4) {
+//     data[i] = 255 - data[i]; // red
+//     data[i + 1] = 255 - data[i + 1]; // green
+//     data[i + 2] = 255 - data[i + 2]; // blue
+//   }
+            ctx.putImageData(imageData, 0, 0);
             //repeat
             setTimeout(draw, 10);
         }
