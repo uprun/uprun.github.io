@@ -109,54 +109,50 @@
             var s_v = sin(V)
             var c_v = cos(V)
             
-            var monX= round(p.y0*c_h - p.x0*s_h) ;
-            var distance_to_camera0 = p.z0 * s_v + c_v * (p.x0 * c_h + p.y0 * s_h)
-            var monY=   ( s_v * ( p.y0*s_h + p.x0*c_h ) ) - (p.z0*c_v);
-            //monY =  p.x0 * s_v * c_h - p.z0 * c_v + p.y0 * s_h * s_v
+            var monX = p.point.y * c_h - p.point.x * s_h;
+            monX = round(monX)
+            var distance_to_camera0 = p.point.z * s_v + c_v * (p.point.x * c_h + p.point.y * s_h)
+            var monY = ( s_v * ( p.point.y * s_h + p.point.x * c_h ) ) - (p.point.z * c_v);
             monY= round(monY)
             
             return {
                 monX: monX,
-                distance_to_camera0: distance_to_camera0,
-                monY: monY
+                monY: monY,
+                distance_to_camera0: distance_to_camera0
             }
 
         }
 
-        var r = transform_to_camera({
-                    x0: 100,
-                    y0: 0,
-                    z0: 0, 
-                    horizontal_degrees_of_camera: 1, 
-                    vertical_degrees_of_camera: 0
-                    });
+        var r = 
+            transform_to_camera({
+                point: {x: 100, y: 0, z: 0, type: "3d-point"}, 
+                horizontal_degrees_of_camera: 1, 
+                vertical_degrees_of_camera: 0
+            });
         console.log(r)
 
-        var r = transform_to_camera({
-                    x0: 0,
-                    y0: 100,
-                    z0: 0, 
-                    horizontal_degrees_of_camera: 30, 
-                    vertical_degrees_of_camera: 0
-                    });
+        var r = 
+            transform_to_camera({
+                point: {x: 0, y: 100, z: 0, type: "3d-point"}, 
+                horizontal_degrees_of_camera: 30, 
+                vertical_degrees_of_camera: 0
+            });
         console.log(r)
 
-        var r = transform_to_camera({
-                    x0: 100,
-                    y0: 0,
-                    z0: 0, 
-                    horizontal_degrees_of_camera: 0, 
-                    vertical_degrees_of_camera: 1
-                    });
+        var r = 
+            transform_to_camera({
+                point: {x: 100, y: 0, z: 0, type: "3d-point"}, 
+                horizontal_degrees_of_camera: 0, 
+                vertical_degrees_of_camera: 1
+            });
         console.log(r)
 
-        var r = transform_to_camera({
-                    x0: 0,
-                    y0: 0,
-                    z0: 100, 
-                    horizontal_degrees_of_camera: 0, 
-                    vertical_degrees_of_camera: 30
-                    });
+        var r = 
+            transform_to_camera({
+                point: { x: 0, y: 0, z: 100, type: "3d-point"}, 
+                horizontal_degrees_of_camera: 0, 
+                vertical_degrees_of_camera: 30
+            });
         console.log(r)
 
         function write_color(monX, monY, color)
@@ -189,24 +185,39 @@
 
         }
 
-        function L(x0,y0,z0,x1,y1,z1, color)
+        function distance_between_points(p)
         {
-            var steps = 100;
+            var dx = (p.finish.x - p.start.x);
+            var dy = (p.finish.y - p.start.y);
+            var dz = (p.finish.z - p.start.z);
+
+            var result = dx * dx + dy * dy + dz * dz;
+            result = Math.sqrt(result);
+            return result;
+        }
+
+        function L(p)
+        {
+            var steps = distance_between_points(p);
             
-            for(var k = 0; k <= steps; k++)
+            for(var k = 0; k <= steps; k+= 0.9)
             {
-                var dx = ((x1 - x0) * k / steps) + x0;
-                var dy = ((y1 - y0) * k / steps) + y0;
-                var dz = ((z1 - z0) * k / steps) + z0;
+                var dx = ((p.finish.x - p.start.x) * k / steps) + p.start.x;
+                var dy = ((p.finish.y - p.start.y) * k / steps) + p.start.y;
+                var dz = ((p.finish.z - p.start.z) * k / steps) + p.start.z;
                 var r = transform_to_camera({
-                    x0: dx,
-                    y0: dy,
-                    z0: dz, 
+                    point: {x: dx, y: dy, z: dz, type: "3d-point"}, 
                     horizontal_degrees_of_camera: camH, 
                     vertical_degrees_of_camera: camV
                     });
-                draw_pixel(r.monX + 320, r.monY + 240, r.distance_to_camera0, color)
+                draw_pixel(r.monX + 320, r.monY + 240, r.distance_to_camera0, p.color)
             }
+            var r = transform_to_camera({
+                    point: p.finish, 
+                    horizontal_degrees_of_camera: camH, 
+                    vertical_degrees_of_camera: camV
+                    });
+                draw_pixel(r.monX + 320, r.monY + 240, r.distance_to_camera0, p.color)
 
         }
 
@@ -232,19 +243,37 @@
         {
             for( var k = 0; k < 45; k += 1)
             {
-                L(0,0,k,45,0,k, {"r": 255, "g": 0, "b": 0, "a": 255});
+                L({ start: { x: 0, y: 0, z: k, type: "3d-point" },
+                    finish: { x: 45, y: 0, z: k, type: "3d-point" }, 
+                    color: { r: 255, g: 0, b: 0, a: 255, type: "color" }
+                });
 
             }
             
-            for( var k = 45; k > 0; k -= 1)
+            [ "rendering with denser points prevents patterns display", {type: "comment"}, {author: "Oleksandr Kryvonos"}, {creation_date: "2024-11-01 00:30"} ];
+            for( var k = 45; k > 0; k -= 0.5)
             {
-                L(k, -45,0 , k, 0, 0, {"r": 255, "g": 255, "b": 0, "a": 255})
-
+                L({ start: { x: k, y: -45, z: 0, type: "3d-point" }, 
+                    finish: { x: k, y: 0, z: 0, type: "3d-point" }, 
+                    color: {r: 255, g: 255, b: 0, a: 255, type: "color" }
+                });
             }
+            [ "I do not know about you, but I feel that I want to be able to put code into an array", {type: "comment"}, {author: "Oleksandr Kryvonos"}, {creation_date: "2024-11-01 00:50"}]
+            [ "even more, I think that object is an array of pairs <property: text_value>", {type: "comment"}, {author: "Oleksandr Kryvonos"}, { creation_date: "2024-11-01 00:52" }]
             
+            for( var k = -45; k < 0; k += 1)
+            {
+                L({ start: { x: 0, y: k, z: 0, type: "3d-point"},
+                    finish: { x: 0, y: k, z: 45, type: "3d-point"}, 
+                    color: { r: 0, g: 0, b: 255, a: 255, type: "color"}
+                });
+            }
             //console.log("distance_to_camera", distance_to_camera1)
-            L(0,-45,0,0,45,0, {"r": 0, "g": 255, "b": 0, "a": 255});
-            L(0,0,-45,0,0,45, {"r": 0, "g": 0, "b": 255, "a": 255});
+            L({ start: { x: 0, y: -45, z: 0, type: "3d-point"},
+                finish: { x: 0, y: 45, z: 0, type: "3d-point"}, 
+                color: { r: 0, g: 255, b: 0, a: 255, type: "color"}
+            });
+            
         }
 
         function clear_screen()
