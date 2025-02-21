@@ -1,0 +1,11 @@
+.mypage-github{
+    background:#e6e6e7;
+    color:#1f1818;
+    border-radius: 3rem;
+    padding: 0.5rem;
+    border: 0.2rem solid #404eed;
+    display: inline-block;
+}
+.mypage-github > a {
+    color: #1f1818;
+}
