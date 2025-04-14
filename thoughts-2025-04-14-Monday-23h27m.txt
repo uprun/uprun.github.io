@@ -1,0 +1,5 @@
+I need an editor like VSCode but for Android
+My son began to use this keyboard so I decided to use it as well 
+This is actually kind of a good keyboard 
+I might ditch Godot and use that C library the raylib or Odinlang
+I can use one file for current state of the file and another file for the log of changes
