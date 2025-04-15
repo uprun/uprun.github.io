@@ -3,5 +3,6 @@ and 200 out of 278 lines where dedicated to make it look nice ...
 did I mention that this was HTML and JS ... 
 I do not see the original text beneath all that markup anymore
 for my not so good writing this is definetely an overkill
-now I see beaty in compactness.
+now I see beauty in compactness.
 [2025-04-14--23h22m Munich]
+[2025-04-15--23h38m Munich] fixed typo in "beauty"
