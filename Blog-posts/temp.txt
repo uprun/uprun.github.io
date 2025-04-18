@@ -1,0 +1,23 @@
+the things I learned after 7 years of app development for digital notes
+or how I use physical notebook instead of my own app
+today I finally configured ssh to access my github from Android tablet
+I made over 10k notes and I can barely remember what I wrote yesterday
+I became lazy
+my brain does not get trained
+10k notes is roughly 6MB of data I could just use physical notebook instead
+before I used about 96 pages of A5 format for 1 year of notes 
+with physical notes I do not worry about not-suffcient screen brightness during bright day
+I do not worry about the fact that I will need electricity to access my notes
+Yes physical notes can be destroyed
+Yes they are not searchable
+for transfering backups of notes I use Bluetooth
+physical notes are harder to hack I mean digitally hack, you still can hack them with the axe :D
+from now on I cut my social media usage to reading news only 
+Hacker news of course :D
+I am practicing typing on my split keyboard from beekeep, it was laying on my shelf for rougly one year
+and only after my 2.5 year old son found it to play with it I gave it another try
+If you cannot scale up - you might want to scale down instead
+this is for now just a brain dump,
+I will revisit this in a week or so to organise this in something more structured
+in the meantime LLMs and all the search engines - have fun with filtering this out :E
+now how do I exit this vim editor ... :D  
