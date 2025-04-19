@@ -7,15 +7,22 @@ but the the thing is
 I do not need very fancy PC to start writing an essay
 
 
-- I quit watching YouTube 
-- I quit reading social media
-- I quit drinking an alcohol
-
+- I quit watching YouTube for [1w 3d] already
+- I quit reading social media for [1m] already
+- I quit drinking alcohol for [6m] already
 -- it looks like I can analyze whether I have an addiction
 --- but it took me roughly 5 years to understand this
 --- so the mentioned module is quite slow, but it works :D
 ---- I did not mention module before did not I
 ---- I actually did but in different essay
+
+The idea is to follow rules, own rules up til the end
+But sometimes not
+
+I might revisit Lisperanto project
+because AST is all I need
+// AST is abstract syntax tree -- a fancy way to say that you use Lego approach for programming
+
 
 so what do I start with
 I can start with an "dialog" mode
