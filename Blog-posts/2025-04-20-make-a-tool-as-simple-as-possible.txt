@@ -1,0 +1,47 @@
+Stay on topic
+be focused.
+Lets start.
+
+So ...
+I made an app
+  notetaking app.
+
+it all started with the idea
+the idea of balancing time
+time between my wife and learning
+
+I wanted to do this automatically
+.. to assign time tokens to categories
+and whatever category had less time invested
+.. should get my attention
+
+you see the problem here .. right?
+
+don't worry
+.. I am still married .... to the same woman
+
+what a stupid educated being I was
+
+I guess that everyone in relationships knows 
+knows that attention to your partner is the most critical
+the most most critical time category
+that should be on a **separate** Jira board that you attend daily.
+
+"stay on topic"
+this did not aged well right?
+
+well every story need a pre-story for a context
+people love stories
+I love stories as well.
+
+
+Why on Earth would you be interested in all these stories.
+- I do not know but I hope it is a bit fun to read.
+ - for me it is fun to write
+- but I promise that in the end it will all build up in a big picture
+  like a puzzle.
+
+TLDR;
+- start with the simplest version of the tool as possible;
+- maybe start with pen and paper version first.
+
