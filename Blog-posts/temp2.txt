@@ -1,27 +1,36 @@
-If you cannot keep up with expectations maybe downgrade
+If you cannot keep up with expectations 
+maybe downgrade
 
 
 - Dialog approach?
 I always want to buy more fancy equipment... 
 but the the thing is 
-I do not need very fancy PC to start writing an essay
+I do not need very fancy PC to 
+start writing an essay
 
 
 - I quit watching YouTube for [1w 3d] already
 - I quit reading social media for [1m] already
 - I quit drinking alcohol for [6m] already
--- it looks like I can analyze whether I have an addiction
---- but it took me roughly 5 years to understand this
---- so the mentioned module is quite slow, but it works :D
+-- it looks like I can analyze whether 
+   I have an addiction
+--- but it took me roughly 5 years
+    to understand this
+--- so the mentioned module is quite slow, 
+    but it works :D
 ---- I did not mention module before did not I
 ---- I actually did but in different essay
 
-The idea is to follow rules, own rules up til the end
-But sometimes not
+The idea is to follow rules, 
+follow own rules 
+up til the end
+But sometimes you can just change them
 
 I might revisit Lisperanto project
 because AST is all I need
-// AST is abstract syntax tree -- a fancy way to say that you use Lego approach for programming
+// AST is abstract syntax tree -
+or a fancy way to say that I use Lego approach for
+ programming
 
 
 so what do I start with
