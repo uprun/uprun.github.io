@@ -1,0 +1,9 @@
+I already started previously to make my browser
+  the amount of work to finish it is a immense 
+that is why I think that I will change the approach
+  I will create a text browser
+ yeah nothing fancy
+   probably any programmer can do this in a day
+this also should be very modular
+   I want every module to be a separate program
+so I will be able to join them in a Unix way.
