@@ -1,0 +1,35 @@
+so digital garden
+yeah
+ this is kind of similar to a blog 
+   or to twitter or to mastodon
+as I already mentioned in some other essay
+ I used to write in HTML (hyper-text-markup-language)
+it was all nice but consumed a lot of energy
+  and prevented me from actually writing
+     and prevented me from seeing the text
+        and prevented me from editing it
+   so basically it prevented me a lot
+
+so as simple as it can be I started to write in txt
+   just simple text files
+      even without the Markdown support
+
+now I am happy
+   now I write
+     and I do this from a smartphone
+       see other essays for details
+
+I do not need a fancy blog
+just a folder on a distributed version control system
+   you see I like irony
+never the less 
+  digital garden means that essays are half-backed
+and I will revisit them here and there
+   I will "grow" them 
+that is why it is a "garden"
+  the term was NOT invented by me
+and the idea also was not
+   the idea is simple
+ publish ASAP as-soon-as-possible
+    and dont worry about the quality
+       you can improve later.
