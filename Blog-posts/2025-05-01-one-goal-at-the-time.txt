@@ -1,0 +1,16 @@
+hello 
+so today I implemented very simple http server in Go
+  why is this important
+because now I can leverage my web-skills
+  I am good with JavaSript
+and I am good with HTML 
+  just yesterday I rediscovered Nano editor
+but I am close to launching my own web-editor
+  the principle is simple
+for all my tools - they should 
+  - be one screen of a smartphone large.
+
+it is always a good idea to keep tools simple.
+  even in communication,
+    too many goals will ruin the thought.
+           
