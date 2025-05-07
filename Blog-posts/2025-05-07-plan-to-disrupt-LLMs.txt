@@ -1,0 +1,16 @@
+I do not believe in LLMs
+  I would like to make something much simpler
+     something less expensive 
+        less computationally expensive
+I would like to have something as simple as a karate-training-post
+    it simple reflect the force you apply from the other side
+I want something similar 
+   but for thoughts
+     I want a reflection of a thought
+it can be as weird as obviously stupid as "complete-the-sentence-task"
+  like "Do you have <something>?"
+     "Do you have an apple?"
+        "Do you have a salat?"
+           - "which <salat> ?"
+             - "<salat> with falafel"
+    lets see if it can work out.
