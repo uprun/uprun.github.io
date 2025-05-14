@@ -30,3 +30,29 @@
             (yes - as simple as it could possibly be, but good idea takes time to evolve)
             Previously known as: "Lisperanto - in browser IDE for Lisp-like language" 
             - https://uprun.github.io/lisperanto
+
+        >>> | Blog-posts:
+
+        Beauty in compactness
+                - https://uprun.github.io/Blog-posts/2025-04-14-23h-22m--re-visiting-blog-post-writing.md
+                [2025-04-15]
+
+        Revieved first steps in 3d written in Pascal
+                - https://uprun.github.io/fenix/D3_1.html
+                [2024-10-17]
+
+        Bare pixels on canvas Pascal style drawing
+                - https://uprun.github.io/bare-pixel.html
+                [2024-10-15]
+        
+        List of cozy games
+                - https://uprun.github.io/list-of-cozy-games.html
+                [2024-09-04]
+
+        Samsung tablet as a drawing tablet for MacOS
+                - https://uprun.github.io/Samsung-tablet-as-drawing-tablet-for-MacOS.html
+                [2023-02-11]
+
+        How to find information in thousands of notes?
+                - https://uprun.github.io/How-to-find-information-in-thousands-of-notes.html
+                [2023-02-12]
