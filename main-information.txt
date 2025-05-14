@@ -1,0 +1,32 @@
+
+        📍Currently located in Munich 🏰🌳🍺, Germany 🇩🇪 
+        
+        Join Discord - https://discord.gg/W5HFSKVXgc
+        Support on Patreon - https://www.patreon.com/o_kryvonos
+        Follow on Mastodon - https://indieweb.social/@o_kryvonos
+        My Github - https://github.com/uprun
+        
+        My projects [update from 2023-02-13]
+        
+        Inku - awesome blue-board for blueprints or rather for blue-and-yellow-prints 
+              - https://uprun.github.io/inku/
+              [2023-02-13]
+              
+        Canvas documents -  another canvas experiment for me ... 
+              and I am not sure if this is the way to go for me. 
+              I think I will pause with canvases for some time. 
+              - https://uprun.github.io/canvas-typewriter/canvas-documents.html
+              [2023-02-07] 
+            
+        Canvas typewriter -  type like on a typewriter but on draggable canvas 
+              - https://uprun.github.io/canvas-typewriter/canvas-typewriter.html
+              
+        WebPad -  a simple note taking app where every word is a hashtag by default.
+              Or in other words: an app for non-hierarchical associative web of notes (
+              hence the name, but also runs in the browser)
+              - https://uprun.github.io/WebPad/wwwroot/WebPad-mini-wiki.html
+              
+        Lisperanto - a spatial canvas and text editor with history of edits.
+            (yes - as simple as it could possibly be, but good idea takes time to evolve)
+            Previously known as: "Lisperanto - in browser IDE for Lisp-like language" 
+            - https://uprun.github.io/lisperanto
