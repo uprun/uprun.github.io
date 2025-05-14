@@ -17,6 +17,26 @@
     }
 </style>
 
+<scrip>
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://uprun.github.io/main-information.txt", true);
+    xhr.onreadystatechange = function () {
+    
+        if (this.status == 200) {
+            console.log(this.responseText);
+    
+            // we get the returned data
+        }
+        else
+        {
+            console.log("Not yet ready")
+        }
+    
+        // end of state change: it can be after some time (async)
+    };
+    xhr.send(); 
+</scrip>
+
 <body 
     style="margin: 0px">
     
