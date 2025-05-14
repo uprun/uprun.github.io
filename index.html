@@ -24,6 +24,12 @@
     
         if (this.status == 200) {
             console.log(this.responseText);
+            if (this.responseText != "")
+            {
+                var a = this.responseText;
+                var b = a.replace(/(https:\/\/[^"<\n]*)/g, "<a href=\"$1\">$1</a>");
+                
+            }
     
             // we get the returned data
         }
@@ -45,6 +51,10 @@
     <div style="margin: auto; max-width: 60rem;">
         
         <h1>Oleksandr Kryvonos -  Ukrainian computer scientist <img style="width: 3rem;" src="svg/Flag_of_Ukraine.svg" class="webpad-svg-element " style="margin-left: 0.5rem; margin-right: 0.5rem;" alt="Ukrainian flag - two horizontal strips, blue and yellow"/></h1>    
+
+        <div> ==== </div>
+        <div id="insert-text-div"></div>
+        <div> +++++ </div>
         <div>📍Currently located in Munich 🏰🌳🍺, Germany 🇩🇪 </div>
         <div></div>
         <div>Join Discord - https://discord.gg/W5HFSKVXgc</div>
