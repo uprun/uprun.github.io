@@ -27,9 +27,10 @@
             if (this.responseText != "")
             {
                 var a = this.responseText;
-                var b = a.replace(/(https:\/\/[^"<\n]*)/g, "<a href=\"$1\">$1</a>");
-                var c = b.replace(/(\n)/g, "<br>");
-                var d = c.replaceAll(" ", "<span>&nbsp;</span>");
+                var b = a.replaceAll(" ", "<span>&nbsp;</span>");
+                var c = b.replace(/(https:\/\/[^"<\n]*)/g, "<a href=\"$1\">$1</a>");
+                var d = c.replace(/(\n)/g, "<br>");
+                
                 var the_div = document.getElementById("insert-text-div");
                 the_div.innerHTML = d;
                 
