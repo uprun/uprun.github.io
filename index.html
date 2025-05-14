@@ -28,6 +28,8 @@
             {
                 var a = this.responseText;
                 var b = a.replace(/(https:\/\/[^"<\n]*)/g, "<a href=\"$1\">$1</a>");
+                var the_div = document.getElementById("insert-text-div");
+                the_div.innerHTML = b;
                 
             }
     
@@ -53,7 +55,7 @@
         <h1>Oleksandr Kryvonos -  Ukrainian computer scientist <img style="width: 3rem;" src="svg/Flag_of_Ukraine.svg" class="webpad-svg-element " style="margin-left: 0.5rem; margin-right: 0.5rem;" alt="Ukrainian flag - two horizontal strips, blue and yellow"/></h1>    
 
         <div> ==== </div>
-        <div id="insert-text-div"></div>
+        <div id="insert-text-div">... loading data ...</div>
         <div> +++++ </div>
         <div>📍Currently located in Munich 🏰🌳🍺, Germany 🇩🇪 </div>
         <div></div>
