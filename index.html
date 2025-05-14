@@ -29,7 +29,7 @@
                 var a = this.responseText;
                 var b = a.replace(/(https:\/\/[^"<\n]*)/g, "<a href=\"$1\">$1</a>");
                 var c = b.replace(/(\n)/g, "<br>");
-                var d = c.replace(" ", "<span>&nbsp;</span>");
+                var d = c.replaceAll(" ", "<span>&nbsp;</span>");
                 var the_div = document.getElementById("insert-text-div");
                 the_div.innerHTML = d;
                 
