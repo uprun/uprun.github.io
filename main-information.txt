@@ -32,6 +32,10 @@
             - https://uprun.github.io/lisperanto
 
         >>> | Blog-posts:
+        Motto & Thoughts:
+                - https://uprun.github.io/Blog-posts/2025-05-07-motto-and-thoughts.txt
+
+        [insert here all the rest of essays]
 
         Beauty in compactness
                 - https://uprun.github.io/Blog-posts/2025-04-14-23h-22m--re-visiting-blog-post-writing.md
