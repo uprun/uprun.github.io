@@ -168,22 +168,23 @@
             imageData.data[alphaIndex] = color.a;
         }
 
-        function draw_pixel(monX, monY, distance_to_camera0, color)
+        function draw_pixel(monX, monY, depth, color)
         {
             if (monX < 0 || monX > canvasWidth) return;
             if (monY < 0 || monY > canvasWidth) return;
             var key = `{x: ${monX}, y: ${monY}}`;
             if (key in depth_buffer)
             {
-                value = depth_buffer[key];
-                if(value < distance_to_camera0)
+                var existing_depth = depth_buffer[key];
+                if(depth > existing_depth)
                 {
                     write_color(monX, monY, color);
+                    depth_buffer[key] = depth;
                 }
             }
             else
             {
-                depth_buffer[key] = distance_to_camera0;
+                depth_buffer[key] = depth;
                 write_color(monX, monY, color);
             }
 
@@ -275,6 +276,14 @@
             {
                 L({ start: { x: 0, y: k, z: 0, type: "3d-point-cm"},
                     finish: { x: 0, y: k, z: 45, type: "3d-point-cm"}, 
+                    color: { r: 0, g: 0, b: 255, a: 255, type: "color"}
+                });
+            }
+
+            for( var k = -45; k < -10; k += 1)
+            {
+                L({ start: { x: 45, y: k, z: 10, type: "3d-point-cm"},
+                    finish: { x: 45, y: k, z: 45, type: "3d-point-cm"}, 
                     color: { r: 0, g: 0, b: 255, a: 255, type: "color"}
                 });
             }
