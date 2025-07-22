@@ -18,3 +18,11 @@ I can even not look for a while on the screen and still enjoy typing
       but I need to reprogram it
   oh by the way I am ditching Visual studio code for my own editor.
     checkout web-editor on my github profile.
+
+Update 2025-07
+  I will use the on-screen keyboard of my phone.
+    I will also do the same with my tablet.
+      I am learning neovim.
+        So no custom editor for now.
+  I am actually typing faster on my phone ...
+    with two thumbs rather than with ten.
