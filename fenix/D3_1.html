@@ -127,13 +127,7 @@
 
         }
 
-        var r = 
-            transform_to_camera({
-                point: {x: 100, y: 0, z: 0, type: "3d-point-cm"}, 
-                horizontal_degrees_of_camera: 1, 
-                vertical_degrees_of_camera: 0
-            });
-        console.log(r)
+   
 
         var r = 
             transform_to_camera({
@@ -171,7 +165,7 @@
         function draw_pixel(monX, monY, depth, color)
         {
             if (monX < 0 || monX > canvasWidth) return;
-            if (monY < 0 || monY > canvasWidth) return;
+            if (monY < 0 || monY > canvasHeight) return;
             var key = `{x: ${monX}, y: ${monY}}`;
             if (key in depth_buffer)
             {
