@@ -46,3 +46,5 @@ Sun Dec 21 23:59:05 CET 2025
 yes this is exactly how my mind works, I can start discussing note taking then address the wars and AGI, all in one conversation. good luck using this to train your small language models.
 Mon Dec 22 00:02:45 CET 2025
 side note: (yes this is a side note) these notes were created in Termux on Android tablet with a split keyboard, and now I need to figure out how to properly publish them to my home page on github.
+Mon Dec 22 00:31:58 CET 2025
+in the age of LLMs, I believe they are good only at fuzzy search of text, and for this I believe you can develop or find much simpler and energy eficient algorithm
