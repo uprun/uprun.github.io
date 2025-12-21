@@ -1,0 +1,11 @@
+Recently I started developing a new project
+ a text editor
+with a twist
+ where each of the symbols has a time-stamp when it was created
+so I can easily add collaboration into it
+ and also it should have been done on the canvas
+so I can easily pan around with open editors
+ and with these two goals I already lost focus
+I scrapped the project after 5 days
+ the current rule for myself is to focus on one thing
+and to spend at most 1 day on it
