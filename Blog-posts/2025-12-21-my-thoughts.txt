@@ -48,3 +48,19 @@ Mon Dec 22 00:02:45 CET 2025
 side note: (yes this is a side note) these notes were created in Termux on Android tablet with a split keyboard, and now I need to figure out how to properly publish them to my home page on github.
 Mon Dec 22 00:31:58 CET 2025
 in the age of LLMs, I believe they are good only at fuzzy search of text, and for this I believe you can develop or find much simpler and energy eficient algorithm
+Mon Dec 22 21:37:36 CET 2025
+for years I was serching for ideal setup, and now I feel that I found it - it is a Samsung Tab S6 Lite with kickstand cover and a custom split keyboard
+Mon Dec 22 21:40:32 CET 2025
+What can we learn from LLMs - first of all that they are very bad at intelligence, second - that people love them, third - that they use way much more energy than it is needed and most of the people do not care.
+Mon Dec 22 21:43:32 CET 2025
+But what if I could make something simpler and way smaller like Eliza project, that could run in a very 'simple' devices?
+Mon Dec 22 21:50:20 CET 2025
+so now when my command is named 'add-journal-entry' I feel like a captain from StarTrek adding new journal entries
+Mon Dec 22 21:52:36 CET 2025
+the benefit of a custom split keyboard is not its mechanical keys but rather the splittines of it and ergonomics and the ability to reprogran layout of the keyboard
+Mon Dec 22 21:55:24 CET 2025
+I have created dozens of notes applications and I started using just two commands from bash to add entries to the journal
+Mon Dec 22 21:59:15 CET 2025
+what is bash? - 'bash' is a kind of agentic chat with your computer, but it predates LLMs like by 60 years or something. Ofcourse it is not as human-language oriented as ChatGPT but it is still very powerful
+Mon Dec 22 22:52:56 CET 2025
+Bash is also kind of REPL from Lisp programming language, well if you squise your eyes
