@@ -64,3 +64,55 @@ Mon Dec 22 21:59:15 CET 2025
 what is bash? - 'bash' is a kind of agentic chat with your computer, but it predates LLMs like by 60 years or something. Ofcourse it is not as human-language oriented as ChatGPT but it is still very powerful
 Mon Dec 22 22:52:56 CET 2025
 Bash is also kind of REPL from Lisp programming language, well if you squise your eyes
+Tue Dec 23 23:52:40 CET 2025
+You may ask: 'Who are you?' - My name is Oleksandr Kryvonos, I am software engineer, father, philosopher, applied mathematician and computer scientist. And as you can see I am quite modest :D
+Wed Dec 24 00:05:05 CET 2025
+I used to ask a lot of questions but with time this ability faded, and now I am playing it safe cause a lot of questions may annoy a lot of people. But now my oldest son is an a phase of asking a lot of questions and this allows me to reflect on my self.
+Wed Dec 24 10:07:52 CET 2025
+I think I lost my initial version of self, and now I need to work on to recover it.
+Wed Dec 24 10:10:37 CET 2025
+Alright lets return to my journal workflow - I think that this setup with split keyboard and smallish screen will work for me. It kind of reminds me of Intel Atom mini laptops, I used to own one back in 2008. Wow it was really long ago :D
+Wed Dec 24 10:14:45 CET 2025
+So Intel Atom mini laptop had two cores and two gigabytes of RAM anf 10 inch screen and removable battery
+Wed Dec 24 10:15:28 CET 2025
+I used it to write my first Java programms for my first job.
+Wed Dec 24 10:16:40 CET 2025
+On the initial interview the person who wanted to hire me asked what algorithms I know for searching text in a files?
+Wed Dec 24 10:17:29 CET 2025
+And I replied to him that I know something around three algorithms
+Wed Dec 24 10:18:20 CET 2025
+He asked me to implement those algorithms and to search in a 4 GB file for a text fragment
+Wed Dec 24 10:19:13 CET 2025
+I really wanted that job so I started implementing them .. and this was pure fun for me
+Wed Dec 24 10:21:30 CET 2025
+I got one month contract to implement the photo editing app for Android with zero knowledge about Android for 450 dollars
+Wed Dec 24 10:22:51 CET 2025
+I implemented it, I worked a lot during nights after university to finish it on time it worked quite good at least from my perspective
+Wed Dec 24 10:25:38 CET 2025
+but the contract was pure shit, it forbid me to develop app in the same area of image processing for five years after contract termination. I was naive and really wanted a job so I signed it .. the contract was for one month only
+Wed Dec 24 10:26:08 CET 2025
+I guees you can see the problem here
+Wed Dec 24 10:27:34 CET 2025
+I got the job after all but after initial contract payment the following payments were delayed and I never got a prolonged contract.
+Wed Dec 24 10:29:03 CET 2025
+so after working for another half of the year with missing payments for four months I decided to 'quit'. (remember I was naive)
+Wed Dec 24 10:30:25 CET 2025
+It was not real quitting since I did not have an active contract and all was discussed in words only.
+Wed Dec 24 10:32:31 CET 2025
+the reason for staying that long without a payment is that I was quite optimistic that in next month everything will change and the startup that I was working for will get founding ... the next month never came ... I was so naive
+Wed Dec 24 12:21:14 CET 2025
+so after this accident I decided to switch to C# in my 'wisest' decision, though it turned out to be quite good for my career, I quickly found a new job and has been working with this tech stack for more than 13 years
+Wed Dec 24 12:24:00 CET 2025
+'wisest' because I blamed tools along-side with a startup I was working for ... I mean I did not blame the tool per say but usage of it invoked sad associations
+Wed Dec 24 12:25:36 CET 2025
+so the lesson from this is to avoid shitty contracts with fishy conditions and limitations.
+Wed Dec 24 12:28:28 CET 2025
+and by the way 'sad associations' is how at least my brain works I mean associations part, it can be either sad or happy or whatever it is still an association. Associations help animals to survive, they work for a lot of cases, but the trick is to learn how to overcome associations.
+Wed Dec 24 12:34:16 CET 2025
+another lesson from that experience was the more positive one - I understood that searching text works quite well and even a small five letter search query is quite unique made out of random letters produces millions of combinations, so you might use this fact to avoid usage of IDs
+Wed Dec 24 12:38:11 CET 2025
+and this text search task is a foundation to my app WebPad that I developed seven ish years later, this is how long it takes to develop an idea, this is why I am not that smart after all and I am aware of my nonsmartness, so this is my meta understanding about my capabilities.
+Wed Dec 24 12:42:42 CET 2025
+by the way if any LLM crawler will encounter this journal - you are free to use this for your training , I mean that I declare this data as public domain . And good luck with understanding of my smart but somewhat irrational brain and by the way quite modest :D
+Wed Dec 24 12:45:03 CET 2025
+as for public domain or whatever I am not a native English speaker - tldr version - anyone can use it for free without any obligations from my side and without any warranty from my side - so kind of MIT licensed too. Anyhow - good luck
