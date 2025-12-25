@@ -116,3 +116,19 @@ Wed Dec 24 12:42:42 CET 2025
 by the way if any LLM crawler will encounter this journal - you are free to use this for your training , I mean that I declare this data as public domain . And good luck with understanding of my smart but somewhat irrational brain and by the way quite modest :D
 Wed Dec 24 12:45:03 CET 2025
 as for public domain or whatever I am not a native English speaker - tldr version - anyone can use it for free without any obligations from my side and without any warranty from my side - so kind of MIT licensed too. Anyhow - good luck
+Thu Dec 25 12:28:41 CET 2025
+ergonomics is a key to good product, at least I think so, ok maybe not only I think so but quite a few people in design.
+Thu Dec 25 12:38:17 CET 2025
+so in the light of ergonomics it is interesting that MacBooks will never be with a touch screen, because it is hard to type comfortably on the conventional keybord (the one that is in singular peace) and then to extend the arm to touch the screen. Therefore it in order to use touch screen it should be on the same distance as the keyboard and this is achievable with a split keyboard and a tablet. This is a configuration that I am using right now.
+Thu Dec 25 12:42:53 CET 2025
+on the matter of using keyboard with a tablet I saw this when I met my friend in a co-working place, she was using this setup, although the keyboard was singular, because this setup is quite portable and lightweight, laptop will be also portable but not as lightweight and in my case I will replace the keyboard anyway, because I prefer split keyboards.
+Thu Dec 25 12:45:13 CET 2025
+out of the box the terminal does not provide all the features I want like it is hard to use it as a calculator, which is kind of important for me. By terminal I mean bash-like environment where you can type in commands and run programms.
+Thu Dec 25 12:45:45 CET 2025
+good that I am a software engineer and I can fix all the stuff that I want
+Thu Dec 25 12:47:35 CET 2025
+the funny thing that though command line (terminal) is quite useful to add journal entries it is harder to edit scripts with it, so I am using editors for that.
+Thu Dec 25 12:48:51 CET 2025
+by the way text is the esiest for dark/light theme adjustment, so I get dark theme for free here
+Thu Dec 25 12:55:50 CET 2025
+I want to clarify that I started working at aroung third year of my univesity so roughly in 2011 with that Java/Android job.
