@@ -17,6 +17,7 @@
     }
 </style>
 
+
 <script>
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://uprun.github.io/main-information.txt", true);
@@ -48,6 +49,38 @@
     xhr.send(); 
 </script>
 
+
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://uprun.github.io/journal.log", true);
+    xhr.onreadystatechange = function () {
+    
+        if (this.status == 200) {
+            console.log(this.responseText);
+            if (this.responseText != "")
+            {
+                var a = this.responseText;
+                var b = a.replaceAll(" ", "<span>&nbsp;</span>");
+                var c = b.replace(/(https:\/\/[^"<\n]*)/g, "<a href=\"$1\">$1</a>");
+                var d = c.replace(/(\n)/g, "<br>");
+                
+                var the_div = document.getElementById("insert-journal-div");
+                the_div.innerHTML = d;
+                
+            }
+    
+            // we get the returned data
+        }
+        else
+        {
+            console.log("Not yet ready")
+        }
+    
+        // end of state change: it can be after some time (async)
+    };
+    xhr.send(); 
+</script>
+
 <body 
     style="margin: 0px">
     
@@ -59,6 +92,8 @@
 
         <div> <i>Text below is loaded automatically and formatted into html </i></div>
         <div id="insert-text-div">... loading data ...</div>
+	<div> <i>Below is my public journal/log :</i></div>
+	<div id="insert-journal-div"> ... loading journal</div>
         
     </div>
     
