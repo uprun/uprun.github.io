@@ -6,8 +6,12 @@
         Follow on Mastodon - https://indieweb.social/@o_kryvonos
         My Github - https://github.com/uprun
         
+	How do we get to the StarTrek age without destroying our planet?
+
         My projects [update from 2023-02-13]
-        
+	
+	
+	        
         Inku - awesome blue-board for blueprints or rather for blue-and-yellow-prints 
               - https://uprun.github.io/inku/
               [2023-02-13]
