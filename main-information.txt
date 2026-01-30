@@ -5,61 +5,29 @@
         Support on Patreon - https://www.patreon.com/o_kryvonos
         Follow on Mastodon - https://indieweb.social/@o_kryvonos
         My Github - https://github.com/uprun
-        
-	How do we get to the StarTrek age without destroying our planet?
 
-        My projects [update from 2023-02-13]
-	
-	
-	        
-        Inku - awesome blue-board for blueprints or rather for blue-and-yellow-prints 
-              - https://uprun.github.io/inku/
-              [2023-02-13]
+        [Motto]
+	       Children see - children do. Just trying to be a decent human being.
+
+        My projects [update from 2026-01-30]
+
+        Simple 3d renderer
+                - https://uprun.github.io/fenix/D3_1.html
+                [2024-10-17]
               
-        Canvas documents -  another canvas experiment for me ... 
-              and I am not sure if this is the way to go for me. 
-              I think I will pause with canvases for some time. 
-              - https://uprun.github.io/canvas-typewriter/canvas-documents.html
-              [2023-02-07] 
-            
-        Canvas typewriter -  type like on a typewriter but on draggable canvas 
-              - https://uprun.github.io/canvas-typewriter/canvas-typewriter.html
-              
-        WebPad -  mini-wiki notes app like Zettelkasten .
-              Or: web of notes (hence the name, but also runs in the browser)
-              - https://uprun.github.io/WebPad/wwwroot/WebPad-mini-wiki.html
-              
-        Lisperanto - a spatial canvas and text editor with history of edits.
-            (yes - as simple as it could possibly be, but good idea takes time to evolve)
-            Previously known as: "Lisperanto - in browser IDE for Lisp-like language" 
-            - https://uprun.github.io/lisperanto
+        I have plenty of prototypes, I will re-introduce them later. 
 
         >>> | Blog-posts:
         Motto & Thoughts:
                 - https://uprun.github.io/Blog-posts/2025-05-07-motto-and-thoughts.txt
 
-        [insert here all the rest of essays]
-
         Beauty in compactness
                 - https://uprun.github.io/Blog-posts/2025-04-14-23h-22m--re-visiting-blog-post-writing.md
-
-        under LLM hype
-                - https://uprun.github.io/Blog-posts/2025-02-20-HowToServeHTTP-from-Cordova.md
-
-        Revieved first steps in 3d written in Pascal
-                - https://uprun.github.io/fenix/D3_1.html
-                [2024-10-17]
-
-        Bare pixels on canvas Pascal style drawing
-                - https://uprun.github.io/Blog-posts/2024-10-15-bare-pixel.html
         
         List of cozy games
                 - https://uprun.github.io/Blog-posts/2024-09-04-list-of-cozy-games.html
         
         How to find information in thousands of notes?
                 - https://uprun.github.io/Blog-posts/2023-02-12-How-to-find-information-in-thousands-of-notes.html
-
-        Samsung tablet as a drawing tablet for MacOS
-                - https://uprun.github.io/Blog-posts/2023-02-11-Samsung-tablet-as-drawing-tablet-for-MacOS.html
 
 
