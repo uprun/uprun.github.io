@@ -64,13 +64,48 @@
     }
 </script>
 
+<script>
+lookup = {};
+lookup.mouseIsDown = false;
+
+lookup.bodyOnPointerDown = function() {
+    //lookup.createPoint({x: event.pageX, y: event.pageY, start: true, finish: false});
+    lookup.mouseIsDown = true;
+  };
+lookup.bodyOnPointerUp = function() {
+    lookup.mouseIsDown = false;
+    //lookup.createPoint({x: event.pageX, y: event.pageY, start: false, finish: true});
+  };
+
+lookup.bodyOnPointerMove = function() 
+{
+   if(lookup.mouseIsDown) {
+    let events = typeof(event.getCoalescedEvents) === "function"? event.getCoalescedEvents() : [event];
+    for(let e of events) 
+    {
+        camH = e.pageX % 360;
+        camV = e.pageY % 90;
+        check_camera_restrictions();
+        //lookup.createPoint({x: e.pageX, y: e.pageY, start: false, finish: false});
+    }
+   }
+};
+
+
+</script>
+
   
 <body style="background-color: #333333; padding: 0; margin: 0; width: 100vw; height: 100vh;" onkeydown="myFunction()" 
     onmousedown="my_onmousedown()"
     onmousemove="my_onmousemove()"
     onmouseleave="my_onmouse_leave()"
     onmouseout="my_on_mouse_out()"
-    onmouseup="my_on_mouse_up()" >
+    onmouseup="my_on_mouse_up()"
+    onpointermove="typeof(lookup) !== 'undefined' && lookup.bodyOnPointerMove()"
+    onpointerdown="typeof(lookup) !== 'undefined' && lookup.bodyOnPointerDown()"
+    onpointerup="typeof(lookup) !== 'undefined' && lookup.bodyOnPointerUp()" 
+
+>
     <canvas id="myCanvas" width="640" height="480" style="border:1px solid black;"></canvas>
 
     <script>
