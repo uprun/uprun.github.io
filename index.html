@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" id="html">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oleksandr Kryvonos</title>
+</head>
+<style>
+    body
+    {
+        background-color: #333; 
+        color: lightblue;
+
+    }
+    a {
+        color: lightblue;
+    }
+</style>
+
+<script>
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://uprun.github.io/main-information.txt", true);
+    xhr.onreadystatechange = function () {
+    
+        if (this.status == 200) {
+            console.log(this.responseText);
+            if (this.responseText != "")
+            {
+                var a = this.responseText;
+                var b = a.replaceAll(" ", "<span>&nbsp;</span>");
+                var c = b.replace(/(https:\/\/[^"<\n]*)/g, "<a href=\"$1\">$1</a>");
+                var d = c.replace(/(\n)/g, "<br>");
+                
+                var the_div = document.getElementById("insert-text-div");
+                the_div.innerHTML = d;
+                
+            }
+    
+            // we get the returned data
+        }
+        else
+        {
+            console.log("Not yet ready")
+        }
+    
+        // end of state change: it can be after some time (async)
+    };
+    xhr.send(); 
+</script>
+
+<body 
+    style="margin: 0px">
+    <div style="margin: auto; max-width: 60rem;">
+        
+        <h1>Oleksandr Kryvonos -  Ukrainian computer scientist <img style="width: 3rem;" src="svg/Flag_of_Ukraine.svg" class="webpad-svg-element " style="margin-left: 0.5rem; margin-right: 0.5rem;" alt="Ukrainian flag - two horizontal strips, blue and yellow"/></h1>    
+
+        <div id="insert-text-div">
+            <div> <i>Text below is loaded automatically and formatted into html </i></div>
+            <a href="https://uprun.github.io/main-information.txt">Main Information</a>
+        </div>
+        
+    </div>
+    
+</body>
+</html>

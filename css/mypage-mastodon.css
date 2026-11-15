@@ -1,0 +1,11 @@
+.mypage-mastodon{
+    background:#6505cb;
+    color:#fff;
+    border-radius: 3rem;
+    padding: 0.5rem;
+    border: 0.2rem solid #404eed;
+    display: inline-block;
+}
+.mypage-mastodon > a {
+    color: #fff;
+}
